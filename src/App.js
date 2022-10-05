@@ -1,8 +1,25 @@
+import ViewCustomer from "./components/viewCustomers";
+import Header from "./components/Header";
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import Register from "./components/register";
 function App() {
   return (
     <div className="App">
-      <h1>Heelllo</h1>
+      <Router>
+        <Header />
+        <div className='container'>
+          <Routes>
+              <Route exact path ='/' element = {<ViewCustomer/>}></Route>
+              <Route exact path ='/viewCustomer' element = {<ViewCustomer/>}></Route>
+              <Route exact path ="/Register" element = {<Register/>}></Route>
+              
+          </Routes>
+        </div>
+      </Router>
+      {/* <Header></Header>
+      <div className="container"><ViewCustomer></ViewCustomer></div>
+      <Register></Register> */}
     </div>
   );
 }
