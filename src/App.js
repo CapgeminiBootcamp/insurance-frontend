@@ -1,8 +1,9 @@
 import ViewCustomer from "./components/viewCustomers";
 import Header from "./components/Header";
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import Login from "./components/Login/login";
 import Register from "./components/register";
+
 function App() {
   return (
     <div className="App">
@@ -13,7 +14,7 @@ function App() {
               <Route exact path ='/' element = {<ViewCustomer/>}></Route>
               <Route exact path ='/viewCustomer' element = {<ViewCustomer/>}></Route>
               <Route exact path ="/Register" element = {<Register/>}></Route>
-              
+              <Route exact path ="/Login" element = {<Login/>}></Route>
           </Routes>
         </div>
       </Router>

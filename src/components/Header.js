@@ -8,7 +8,7 @@ function Header(){
         <nav className="navbar navbar-expand-lg navbar-dark " style={{ backgroundColor: "#44475a" }}>
             
                 <a className="navbar-brand" href="#">
-                    <img src={logo1} alt="" width="60" height="35" class="d-inline-block align-text-top"/>
+                    <img src={logo1} alt="" width="60" height="35" className="d-inline-block align-text-top"/>
                         
                 </a>
             
