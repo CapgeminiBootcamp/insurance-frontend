@@ -12,18 +12,7 @@ function Login() {
   const[email , setEmail] = useState('')
   const[password , setPassword] = useState('')
 
-  axios({
-    method: 'post',
-    url: 'http://localhost:2024/api/v1/login',
-    data: { email: email , password: password }
-  })
-  .then(res =>{
-    // console.log(res)
-    alert('Login Success');
-  })
-  .catch(err => {
-    console.log(err)
-  })
+  
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string()
@@ -37,6 +26,20 @@ function Login() {
 
   let handleSubmit = (values) => {
     console.log(values);
+
+    axios({
+      method: 'post',
+      url: 'http://localhost:2024/api/v1/login',
+      data: { email: values.email , password: values.password }
+    })
+    .then(res =>{
+      // console.log(res)
+      alert('Login Success');
+    })
+    .catch(err => {
+      console.log(err)
+    })
+
   };
   return (
 
@@ -50,16 +53,18 @@ function Login() {
           password: "",
         }}
         onSubmit={(e) => handleSubmit(e)}
-        validationSchema={LoginSchema}>
+
+         validationSchema={LoginSchema}>
+        
         {(props) => (
           <Form>
             <div>
-              <Field className="inp-1" type="email" name="email" placeholder="Enter your Email..." id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+              <Field className="inp-1" type="email" name="email" placeholder="Enter your Email..." id='email'/>
               <ErrorMessage name="email" />
             </div>
 
             <div>
-              <Field className="inp-2" type="password" name="password" placeholder="Enter your Password..." id='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+              <Field className="inp-2" type="password" name="password" placeholder="Enter your Password..." id='password'/>
               <ErrorMessage name="password"/>
             </div>
             <button className="login-btn" type="submit">Login</button>
