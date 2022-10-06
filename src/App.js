@@ -1,20 +1,20 @@
-import ViewCustomer from "./components/viewCustomers";
-import Header from "./components/Header";
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from "./components/Login/login";
+import Header from './components/Header';
 import Register from "./components/register";
-
+import ViewInsurance from "./components/insurance/viewInsurance";
+import ViewCustomer from './components/viewCustomers';
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
-        <div className='container'>
+        
+        <div className='box'>
           <Routes>
               <Route exact path ='/' element = {<ViewCustomer/>}></Route>
               <Route exact path ='/viewCustomer' element = {<ViewCustomer/>}></Route>
-              <Route exact path ="/Register" element = {<Register/>}></Route>
-              <Route exact path ="/Login" element = {<Login/>}></Route>
+              <Route exact path ="/Register" element = {<Register/>}></Route>             
+              <Route exact path ="/viewInsurance" element = {<ViewInsurance/>}></Route>
           </Routes>
         </div>
       </Router>

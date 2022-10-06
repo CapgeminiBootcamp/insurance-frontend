@@ -27,6 +27,9 @@ function Header(){
                     <li className="nav-item">
                         <a className="nav-link" href='/register'>Register/SignUP</a>
                     </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href='/viewInsurance'>Insurances</a>
+                    </li>
                 </ul>
                 
             </div>
