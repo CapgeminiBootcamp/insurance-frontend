@@ -28,7 +28,11 @@ function Header(){
                         <a className="nav-link" href='/register'>Register/SignUP</a>
                     </li>
                     <li className="nav-item">
+<<<<<<< HEAD
                         <a className="nav-link" href='/Login'>Login</a>
+=======
+                        <a className="nav-link" href='/viewInsurance'>Insurances</a>
+>>>>>>> 430b5d18a886c57dc6f5ab5194e211b3e8677f63
                     </li>
                 </ul>
                 
