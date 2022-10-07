@@ -5,14 +5,14 @@ class InsuranceService{
     getInsurance(){
         return axios.get(USERS_REST_API_URL);
     }
-    getInsuranceById(insranceId){
-        return axios.get(USERS_REST_API_URL  + '/' + insranceId );
+    getInsuranceById(insuranceId){
+        return axios.get(USERS_REST_API_URL  + '/' + insuranceId );
     }
-    updateInsurance(insrance, insranceId){
-        return axios.put(baseURL +'/'+'update-insrance'+'/'+insranceId,insrance);
+    updateInsurance(insurance, insuranceId){
+        return axios.put(baseURL +'/'+'update-insurance'+'/'+insuranceId,insurance);
     }
-    deleteInsurance(customerId){
-        return axios.delete(baseURL +'/'+'delete-insrance'+'/'+ insranceId);
+    deleteInsurance(insuranceId){
+        return axios.delete(baseURL +'/'+'delete-insurance'+'/'+ insuranceId);
     }
 }
 
