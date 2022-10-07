@@ -2,7 +2,8 @@ body{
     overflow-x: hidden;
     background-repeat: no-repeat;
   /* background-position: top; */
-  background: linear-gradient(to right, rgba(114, 86, 174, 1) 0%, rgba(117, 83, 174, 1) 29%, rgba(128, 75, 174, 1) 53%, rgba(140, 66, 174, 1) 100%);
+  background: url(https://img.freepik.com/free-vector/gradient-white-monochrome-background_23-2148997965.jpg?w=2000);
+  /* background: linear-gradient(to right, rgba(114, 86, 174, 1) 0%, rgba(117, 83, 174, 1) 29%, rgba(128, 75, 174, 1) 53%, rgba(140, 66, 174, 1) 100%); */
 }
 
 img {

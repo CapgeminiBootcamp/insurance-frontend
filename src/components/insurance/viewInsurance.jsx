@@ -18,6 +18,12 @@ class ViewInsurance extends React.Component {
         this.props.history.push(`/ViewInsuranceDetails/${id}`);
         window.location.reload();
     }
+    deleteInsurance(id){
+        insuranceService.deleteInsurance(id).then( res => {
+            this.setState({insurances: this.state.insurances.filter(insurance => insurance.insuranceId !== id)});
+        });
+        alert("Insurance Deleted")
+    }
     render() {
         return (
             <div className="maincontainer">
@@ -46,7 +52,9 @@ class ViewInsurance extends React.Component {
                                         
                                         
                                         <td> 
-                                         <button onClick={() => this.viewInsuranceDetails(insurance.insuranceId)} className="btn btn-outline-danger" style={{marginLeft: "8px"}} >Details</button>
+                                        <button onClick={() => this.deleteInsurance(insurance.insuranceId)} className="btn btn-outline-danger" style={{marginLeft: "8px"}} >Delete</button>
+
+                                         <button onClick={() => this.viewInsuranceDetails(insurance.insuranceId)} className="btn btn-outline-success" style={{marginLeft: "8px"}} >Details</button>
                                      </td> 
                                     </tr>
                             )

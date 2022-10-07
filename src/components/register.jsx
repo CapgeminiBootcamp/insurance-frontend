@@ -85,36 +85,21 @@ function Register() {
                         </div>
                         <div className="input-box">
                             <span className="details" >Family members</span>
-                            <input onChange={(e) => handle(e)} type="text" id="customerFamilyMembers" value={data.customerFamilyMembers} classNameName="form-control mb-4" placeholder="Members" />
+                            <input onChange={(e) => handle(e)} type="text" className='form-2' id="customerFamilyMembers" value={data.customerFamilyMembers} placeholder="Members" />
                         </div>
                         <div className="input-box">
                             <span className="details">Email</span>
-                            <input onChange={(e) => handle(e)} type="text" id="email" value={data.email} placeholder="Email" />
+                            <input onChange={(e) => handle(e)} type="text" className='form-2' id="email" value={data.email} placeholder="Email" />
                         </div>
                         <div className="input-box">
                             <span className="details">Password</span>
-                            <input onChange={(e) => handle(e)} type="text" id="password" value={data.password} placeholder="Password" />
+                            <input onChange={(e) => handle(e)} type="text" className='form-2' id="password" value={data.password} placeholder="Password" />
                         </div>
-                        <div className="gender-details">
-                            <input type="radio" name="gender" id="dot-1" value={data.customerGender} />
-                            <input type="radio" name="gender" id="dot-2" value={data.customerGender} />
-                            <input type="radio" name="gender" id="dot-3" value={data.customerGender} />
-                            <span className="gender-title">Gender</span>
-                            <div className="category">
-                                <label for="dot-1">
-                                    <span className="dot one"></span>
-                                    <span className="gender">Male</span>
-                                </label>
-                                <label for="dot-2">
-                                    <span className="dot two"></span>
-                                    <span className="gender">Female</span>
-                                </label>
-                                <label for="dot-3">
-                                    <span className="dot three"></span>
-                                    <span className="gender">Prefer not to say</span>
-                                </label>
-                            </div>
+                        <div className="input-box">
+                            <span className="details">Gender</span>
+                            <input onChange={(e) => handle(e)} type="text" className='form-2' id="customerGender" value={data.customerGender} placeholder="gender" />
                         </div>
+                        
 
                         <div className="button">
                             <input type="submit" value="Register" />

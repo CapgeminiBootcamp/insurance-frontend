@@ -11,8 +11,11 @@ class InsuranceService{
     updateInsurance(insrance, insranceId){
         return axios.put(baseURL +'/'+'update-insrance'+'/'+insranceId,insrance);
     }
-    deleteInsurance(customerId){
-        return axios.delete(baseURL +'/'+'delete-insrance'+'/'+ insranceId);
+    deleteInsurance(insuranceId){
+        return axios.delete(baseURL +'/'+insuranceId);
+    }
+    buyInsurance(customerId, insuranceId){
+        return axios.put(baseURL+'/'+customerId+"/puchaseInsurance/"+insuranceId);
     }
 }
 

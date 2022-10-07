@@ -29,12 +29,9 @@ class ViewCustomer extends React.Component {
                             <td> Name</td>
                             <td> Address</td>
                             <td> Age</td>
-                            <td> Salary </td>
                             <td> Contact</td>
                             <td> Gender</td>
-                            {/* <td> Family Members</td> */}
-                            <td> Email</td>
-                            {/* <td> Password</td> */}
+                            <td> Action</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,12 +42,9 @@ class ViewCustomer extends React.Component {
                                         <td> {customer.cutomerName}</td>
                                         <td> {customer.customeraddress}</td>
                                         <td> {customer.customerAge}</td>
-                                        <td> {customer.customerSalary}</td>
                                         <td> {customer.customerContact}</td>
                                         <td> {customer.customerGender}</td>
-                                        {/* <td> {customer.customerFamilyMembers}</td> */}
-                                        <td> {customer.email}</td>
-                                        <td> {customer.password}</td>
+                                        
                                         <td> 
                                          <button onClick={() => this.viewCustomerDetails(customer.customerId)} className="btn btn-outline-info" style={{marginLeft: "8px"}} >Details</button>
                                      </td> 
