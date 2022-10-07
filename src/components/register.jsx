@@ -47,7 +47,7 @@ function Register() {
 
     return (
         <div className='main'>
-            <div className="container">
+            <div className="mainBox">
                 <div className="title">Registration</div>
                 <div className="content">
                     <form onSubmit={(e) => submit(e)} >
