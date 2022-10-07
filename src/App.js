@@ -1,6 +1,8 @@
 import {BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Register from "./components/register";
+import Dashboard from "./components/Dashboard/dashboard";
+import Footer from "./components/footer";
 import ViewInsurance from "./components/insurance/viewInsurance";
 import ViewCustomer from './components/viewCustomers';
 import Login from './components/Login/login';
@@ -31,7 +33,10 @@ function App() {
               <Route exact path ="/buyInsurance/:id" component = {BuyInsurance}></Route>
           </Switch>
         </div>
+        <br/><br/>
+        <Footer></Footer>
       </Router>
+
       {/* <Header></Header>
       <div className="container"><ViewCustomer></ViewCustomer></div>
       <Register></Register> */}
