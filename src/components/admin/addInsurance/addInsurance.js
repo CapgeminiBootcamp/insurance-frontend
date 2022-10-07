@@ -33,7 +33,7 @@ function AddInsurance() {
     })
       .then((res) => {
         // console.log(res)
-        alert("Login Success");
+        alert("Insurance added Successfully");
       })
       .catch((err) => {
         console.log(err);
