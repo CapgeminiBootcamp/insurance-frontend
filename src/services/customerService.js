@@ -8,8 +8,11 @@ class CustomerService{
     getCustomerById(customerId){
         return axios.get(baseURL  + '/admin/getById' + customerId );
     }
-    updateCustomer(customer, customerId){
-        return axios.put(baseURL +'/'+'update-customer'+'/'+customerId,customer);
+    // updateCustomer(customer, customerId){
+    //     return axios.put(baseURL +'/'+'update-customer'+'/'+customerId,customer);
+    // }
+    updateCustomer(customer){
+        return axios.put(baseURL +'/'+'customer',customer);
     }
     deleteCustomer(customerId){
         return axios.delete(baseURL +'/'+'delete-customer'+'/'+ customerId);

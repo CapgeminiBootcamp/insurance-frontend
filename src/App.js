@@ -10,6 +10,9 @@ import ViewCustomerDetails from './components/viewCustomerDetails';
 import BuyInsurance from './components/buyInsurance';
 import EditInsurance from './components/admin/editInsurance/editInsurance'
 import AddInsurance from './components/admin/addInsurance/addInsurance'
+import PaymentPage from './components/insurance/paymentPage';
+import CustomerDash from './components/customerDash';
+import UpdateCustomer from './components/updateCustomer';
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
               <Route exact path ="/buyInsurance/:id" component = {BuyInsurance}></Route>
               <Route exact path ="/editInsurance/:id" component = {EditInsurance}></Route>
               <Route exact path ="/addInsurance" component = {AddInsurance}></Route>
+              <Route exact path ="/payment/:id" component = {PaymentPage}></Route>
+              <Route exact path ="/customerDash/:id" component = {CustomerDash}></Route>
+              <Route exact path ="/updateCustomer/:id" component = {UpdateCustomer}></Route>
 
           </Switch>
         </div>

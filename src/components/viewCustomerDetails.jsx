@@ -8,7 +8,6 @@ class ViewCustomerDetails extends React.Component{
             customer : {}
         };
     }
-//Abhi ye component nahi chalega pehle getCustomerById ki api backend pe banani padegi 
     componentDidMount() {
         customerService.getCustomerById(this.state.id).then(res => {
             this.setState({ customer: res.data });
