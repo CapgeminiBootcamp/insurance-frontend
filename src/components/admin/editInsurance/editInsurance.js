@@ -18,7 +18,7 @@ function EditInsurance() {
     name: Yup.string().required("Insurance Name cannot be empty"),
     sum: Yup.number()
       .required("Sum cannot be Empty")
-      .min(50000, "cannot be less than 500000"),
+      .min(50000, "Sum cannot be less than 500000"),
     premium_amount: Yup.string().required("premium amount cannot be empty"),
     tenure: Yup.number()
       .min(1, "tenure cannot be less than 1 year")
@@ -27,7 +27,7 @@ function EditInsurance() {
 
   let handleSubmit = (values) => {
     
-      console.log(values, values.premium_amount)
+      console.log(values)
       // values.premium_amount
     axios({
       method: "put",
