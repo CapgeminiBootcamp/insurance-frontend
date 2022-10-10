@@ -8,32 +8,44 @@ import carou3 from '../Assets/carou3.jpg'
 function Dashboard() {
   return (
     <div>  
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-            <ol className="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-        <div className="carousel-inner">
-            <div className="carousel-item active">
-                <img className="d-block w-100" src={carou1} alt="First slide"/>
-            </div>
-            <div className="carousel-item">
-                <img className="d-block w-100" src={carou2} alt="Second slide"/>
-            </div>
-            <div className="carousel-item">
-                <img className="d-block w-100" src={carou3} alt="Third slide"/>
-            </div>
-        </div>
-        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-        </a>
-        </div>
+        <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="false">
+  <div className="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div className="carousel-inner">
+    <div className="carousel-item">
+      <img src="https://images.moneycontrol.com/static-mcnews/2021/11/Health-insurance.jpg?impolicy=website&width=770&height=221" className="d-block w-100" alt="..."/>
+      <div className="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div className="carousel-item">
+      <img src="https://blog.ipleaders.in/wp-content/uploads/2017/04/BV-Acharya-11.jpg" className="d-block w-100" alt="..."/>
+      <div className="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div className="carousel-item active">
+      <img src="https://www.outlookindia.com/outlookmoney/public/uploads/article/gallery/38d9affd650492adbb3cb0d29daa771c.jpg" className="d-block w-100" alt="..."/>
+      <div className="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</div> 
 
                <section>
                 <div className="container">

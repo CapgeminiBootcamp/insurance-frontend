@@ -6,10 +6,10 @@ class InsuranceService{
         return axios.get(USERS_REST_API_URL);
     }
     getInsuranceById(insuranceId){
-        return axios.get(USERS_REST_API_URL  + '/' + insuranceId );
+        return axios.get(baseURL  + '/insurance/'+ insuranceId );
     }
-    updateInsurance(insurance, insuranceId){
-        return axios.put(baseURL +'/'+'update-insurance'+'/'+insuranceId,insurance);
+    updateInsurance(insurance){
+        return axios.put(baseURL +'/insurance',insurance);
     }
     deleteInsurance(insuranceId){
         return axios.delete(baseURL +'/'+insuranceId);

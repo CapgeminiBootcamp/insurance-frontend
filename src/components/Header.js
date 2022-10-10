@@ -37,6 +37,9 @@ function Header(){
                     <li className="nav-item">
                     <a className="nav-link" href='/addInsurance'>Add Insurances</a>
                     </li>
+                    <li className="nav-item">
+                    <a className="nav-link" href='/login'>Log Out</a>
+                    </li>
                 </ul>
                 
             </div>
