@@ -86,3 +86,36 @@ img{
     background-color: #171717;color: white;
     border-bottom:  1px solid #282828;
   }
+  .new-one {
+    border: 8px solid violet;
+    /* width: 300px; */
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px;
+    width: 200px;
+    color:#ffbd0a;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    outline: none !important;
+    background: #2d2d2d;
+    
+  }
+  /* .title{
+    align-items: center;
+  } */
+  .calculate-btn{
+    height: 100%;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }

@@ -80,6 +80,7 @@ class CustomerDash extends React.Component {
             //     </table>
 
             // </div>
+            //  </div>
         )
     }
 

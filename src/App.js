@@ -1,13 +1,13 @@
-import {BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Register from "./components/register";
 import Dashboard from "./components/Dashboard/dashboard";
-import Footer from "./components/footer";
 import ViewInsurance from "./components/insurance/viewInsurance";
 import ViewCustomer from './components/viewCustomers';
 import Login from './components/Login/login';
 import ViewCustomerDetails from './components/viewCustomerDetails';
 import BuyInsurance from './components/buyInsurance';
+import AdminLogin from './components/admin/adminLogin/adminLogin';
 import EditInsurance from './components/admin/editInsurance/editInsurance'
 import AddInsurance from './components/admin/addInsurance/addInsurance'
 import PaymentPage from './components/insurance/paymentPage';
@@ -37,6 +37,7 @@ function App() {
               <Route exact path ="/login" component = {Login}></Route>
               <Route exact path ="/viewcustomerdetails/:id" component = {ViewCustomerDetails}></Route>
               <Route exact path ="/buyInsurance/:id" component = {BuyInsurance}></Route>
+              <Route exact path ="/adminLogin" component = {AdminLogin}></Route>
               <Route exact path ="/editInsurance/:id" component = {EditInsurance}></Route>
               <Route exact path ="/addInsurance" component = {AddInsurance}></Route>
               <Route exact path ="/payment/:id" component = {PaymentPage}></Route>
@@ -46,12 +47,7 @@ function App() {
           </Switch>
         </div>
         <br/><br/>
-        <Footer></Footer>
       </Router>
-
-      {/* <Header></Header>
-      <div className="container"><ViewCustomer></ViewCustomer></div>
-      <Register></Register> */}
     </div>
   );
 }

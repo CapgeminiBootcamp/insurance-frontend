@@ -2,6 +2,8 @@ import React from 'react'
 import insurance1 from '../Assets/insurance1.png'
 import insurance2 from '../Assets/insurance2.jfif'
 import '../Dashboard/dashboard.css'
+import Calculator from '../Insurance Calculator/calculator'
+import Footer from '../footer'
 import carou1 from '../Assets/carou1.jpg'
 import carou2 from '../Assets/carou2.jpg'
 import carou3 from '../Assets/carou3.jpg'
@@ -14,17 +16,17 @@ function Dashboard() {
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-        <div className="carousel-inner">
-            <div className="carousel-item active">
-                <img className="d-block w-100" src={carou1} alt="First slide"/>
+            <div className="carousel-inner">
+                <div className="carousel-item active">
+                    <img className="d-block w-100" src={carou1} alt="First slide"/>
+                </div>
+                <div className="carousel-item">
+                    <img className="d-block w-100" src={carou2} alt="Second slide"/>
+                </div>
+                <div className="carousel-item">
+                    <img className="d-block w-100" src={carou3} alt="Third slide"/>
+                </div>
             </div>
-            <div className="carousel-item">
-                <img className="d-block w-100" src={carou2} alt="Second slide"/>
-            </div>
-            <div className="carousel-item">
-                <img className="d-block w-100" src={carou3} alt="Third slide"/>
-            </div>
-        </div>
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="sr-only">Previous</span>
@@ -34,9 +36,10 @@ function Dashboard() {
             <span className="sr-only">Next</span>
         </a>
         </div>
-
+        <br></br><br></br>
                <section>
                 <div className="container">
+                    <Calculator/>
                     <br></br><br></br>
                     <p className = "ptag-main">
                         We have <span className="color-3">Top class Insurances</span> and material thats's enough to provide you
@@ -125,9 +128,13 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> 
+            <br/>
+            <Footer/>
     </div>
+    
   )
+  
 }
 
 export default Dashboard
