@@ -1,112 +1,19 @@
-body{
-    overflow-x: hidden;
-    background-repeat: no-repeat;
-  /* background-position: top; */
-  background: url(https://img.freepik.com/free-vector/gradient-white-monochrome-background_23-2148997965.jpg?w=2000);
-  /* background: linear-gradient(to right, rgba(114, 86, 174, 1) 0%, rgba(117, 83, 174, 1) 29%, rgba(128, 75, 174, 1) 53%, rgba(140, 66, 174, 1) 100%); */
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
 }
-
-img {
-    max-width: 100%;
+.h-custom {
+height: calc(100% - 73px);
 }
-
-/* login button */
-.login-btn {
-    margin-top: 20px;
-    display: inline-block;
-    border: none;
-    border-radius: 20px;
-    padding: 5px;
-    width: 150px;
-    color: azure;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    outline: none !important;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
-img {
-max-width: 100%;
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
 }
-  
-/* outer div */
-.outer-div {
-position: relative;
-overflow-x: hidden;
 }
-
-.log {
-    margin-top: 100px;
-    align-content: center;
-  }
-.log h1 {
-    font-weight: 500;
-    font-size: 50px;
-    color: #2d2d2d;
-    margin-bottom: 15px;
-    margin-top: 2px;
-  }
-
-.login-btn:hover{
-box-shadow: 5px 5px 15px #00000021;
+#logo{
+    height: 3em;
+    width: 6em;
 }
-.newicn{
-  width: 200px;
-  height: 220px;
-}
-
-/* input width */
-.inp-1 {
-    width: 300px !important;
-    border-radius: 20px !important;
-    margin-bottom: 20px;
-    box-shadow: 5px 5px 15px #00000021;
-    outline: none !important;
-    font-weight: 400 !important;
-    padding: 5px;
-  }
-  .inp-1:focus{
-    box-shadow: 5px 5px 15px #00000021 !important;
-  }
-  /* .inp-1 .inp-2 ::placeholder{
-    color: rgba(73,80,87,0.1) !important;
-  } */
-  .inp-1::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(73,80,87,0.6) !important;
-  }
-  
-  .inp-1:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: rgba(73,80,87,0.6) !important;
-  }
-  
-  .inp-1::-ms-input-placeholder { /* Microsoft Edge */
-    color: rgba(73,80,87,0.6) !important;
-  }
-  .inp-2::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(73,80,87,0.6) !important;
-  }
-  
-  .inp-2:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: rgba(73,80,87,0.6) !important;
-  }
-  
-  .inp-2::-ms-input-placeholder { /* Microsoft Edge */
-    color: rgba(73,80,87,0.6) !important;
-  }
-  .inp-2 {
-    width: 300px !important;
-    border-radius: 20px !important;
-    margin-bottom: 20px;
-    /* height: 20px; */
-    box-shadow: 5px 5px 15px #00000021;
-    /* background: url('../contact/icons8importantmail24.png') no-repeat 98%; */
-    outline: none !important;
-    font-weight: 400 !important;
-    padding: 5px;
-  }
-  .inp-2:focus{
-    box-shadow: 5px 5px 15px #00000021 !important;
-  }
-  .errorFields{
-        color: red;
-  }

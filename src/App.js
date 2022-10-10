@@ -13,22 +13,14 @@ import AddInsurance from './components/admin/addInsurance/addInsurance'
 import PaymentPage from './components/insurance/paymentPage';
 import CustomerDash from './components/customerDash';
 import UpdateCustomer from './components/updateCustomer';
+import UpdateInsurance from './components/insurance/updateInsurance';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
-        
         <div className='box'>
-          {/* <Routes>
-              <Route exact path ='/' element = {<ViewCustomer/>}></Route>
-              <Route exact path ='/viewCustomer' element = {<ViewCustomer/>}></Route>
-              <Route exact path ="/Register" element = {<Register/>}></Route>             
-              <Route exact path ="/viewInsurance" element = {<ViewInsurance/>}></Route>
-              <Route exact path ="/login" element = {<Login/>}></Route>
-              <Route exact path ="/viewcustomerdetails/:id" element = {<ViewCustomerDetails/>}></Route>
-          </Routes> */}
           <Switch>
               <Route exact path ='/' component = {Dashboard}></Route>
               <Route exact path ='/viewCustomer' component = {ViewCustomer}></Route>
@@ -43,7 +35,7 @@ function App() {
               <Route exact path ="/payment/:id" component = {PaymentPage}></Route>
               <Route exact path ="/customerDash/:id" component = {CustomerDash}></Route>
               <Route exact path ="/updateCustomer/:id" component = {UpdateCustomer}></Route>
-
+              <Route exact path ="/updateInsurance/:id" component = {UpdateInsurance}></Route>
           </Switch>
         </div>
         <br/><br/>
@@ -53,3 +45,11 @@ function App() {
 }
 
 export default App;
+ {/* <Routes>
+              <Route exact path ='/' element = {<ViewCustomer/>}></Route>
+              <Route exact path ='/viewCustomer' element = {<ViewCustomer/>}></Route>
+              <Route exact path ="/Register" element = {<Register/>}></Route>             
+              <Route exact path ="/viewInsurance" element = {<ViewInsurance/>}></Route>
+              <Route exact path ="/login" element = {<Login/>}></Route>
+              <Route exact path ="/viewcustomerdetails/:id" element = {<ViewCustomerDetails/>}></Route>
+          </Routes> */}
