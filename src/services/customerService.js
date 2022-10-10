@@ -6,7 +6,7 @@ class CustomerService{
         return axios.get(USERS_REST_API_URL);
     }
     getCustomerById(customerId){
-        return axios.get(baseURL  + '/admin/getById' + customerId );
+        return axios.get(baseURL  + '/admin/getById/' + customerId );
     }
     // updateCustomer(customer, customerId){
     //     return axios.put(baseURL +'/'+'update-customer'+'/'+customerId,customer);
