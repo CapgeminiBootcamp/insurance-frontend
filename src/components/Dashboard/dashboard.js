@@ -2,6 +2,8 @@ import React from 'react'
 import insurance1 from '../Assets/insurance1.png'
 import insurance2 from '../Assets/insurance2.jfif'
 import '../Dashboard/dashboard.css'
+import calculator from '../Insurance Calculator/calculator'
+import Footer from '../footer'
 import carou1 from '../Assets/carou1.jpg'
 import carou2 from '../Assets/carou2.jpg'
 import carou3 from '../Assets/carou3.jpg'
@@ -37,6 +39,7 @@ function Dashboard() {
 
                <section>
                 <div className="container">
+                    <calculator/>
                     <br></br><br></br>
                     <p className = "ptag-main">
                         We have <span className="color-3">Top class Insurances</span> and material thats's enough to provide you
@@ -125,9 +128,13 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> 
+            <br/>
+            <Footer/>
     </div>
+    
   )
+  
 }
 
 export default Dashboard

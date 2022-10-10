@@ -1,14 +1,14 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import "./login.css";
+import "../adminLogin/adminLogin.css";
 import axios from "axios";
 import { useState } from "react";
-import logIcon from "../Assets/user1.png";
+// import logIcon from "../Assets/user1.png";
 
 
 
 
-function Login() {
+function AdminLogin() {
   const[email , setEmail] = useState('')
   const[password , setPassword] = useState('')
 
@@ -29,7 +29,7 @@ function Login() {
 
     axios({
       method: 'post',
-      url: 'http://localhost:2024/api/v1/login',
+      url: 'http://localhost:2024/api/v1/admin/login',
       data: { email: values.email , password: values.password }
     })
     .then(res =>{
@@ -44,7 +44,7 @@ function Login() {
   return (
     <center>
     <div className="log">
-      <img src= {logIcon} className="newicn" alt="Login Icon" />
+      {/* <img src= {logIcon} className="newicn" alt="Login Icon" /> */}
       <h1>Login</h1>
       
       <Formik
@@ -57,7 +57,6 @@ function Login() {
          validationSchema={LoginSchema}>
         
         {(props) => (
-          
           <Form>
             <div>
               <Field className="inp-1" type="email" name="email" placeholder="Enter your Email..."/>
@@ -65,12 +64,11 @@ function Login() {
             </div>
 
             <div>
-              <Field className="inp-2" type="password" name="password" placeholder="Enter your Password..." />
+              <Field className="inp-2" type="password" name="password" placeholder="Enter your Password..."/>
               <ErrorMessage name="password"/>
             </div>
             <button className="login-btn" type="submit">Login</button>
           </Form>
-          
         )}
       </Formik>
     </div>
@@ -78,4 +76,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default AdminLogin;
