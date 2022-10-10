@@ -17,6 +17,7 @@ export default class UpdateCustomer extends Component {
             email: "",
             password: ""
         }
+        this.changeCustomerIdHandler = this.changeCustomerIdHandler.bind(this);
         this.changeCutomerNameHandler = this.changeCutomerNameHandler.bind(this);
         this.changeCustomeraddressHandler = this.changeCustomeraddressHandler.bind(this);
         this.changeCustomerAgeHandler = this.changeCustomerAgeHandler.bind(this);
@@ -51,7 +52,9 @@ export default class UpdateCustomer extends Component {
     updateCustomer = (e) => {
         e.preventDefault();
         console.log("save pressed")
-        let customer = { cutomerName: this.state.cutomerName, 
+        let customer = { 
+            customerId: this.state.customerId,
+            cutomerName: this.state.cutomerName, 
             customeraddress: this.state.customeraddress, 
             customerAge: this.state.customerAge,
             customerSalary: this.state.customerSalary,
@@ -62,8 +65,11 @@ export default class UpdateCustomer extends Component {
             password: this.state.password};
 
         customerService.updateCustomer(customer).then(res => {
-            this.props.history.push('/viewCustomer'+ this.state.customerId);
+            this.props.history.push('/buyInsurance/'+ this.state.customerId);
         });
+    }
+    changeCustomerIdHandler = (event) => {
+        this.setState({ customerId: event.target.value });
     }
 
     changeCutomerNameHandler = (event) => {
@@ -111,6 +117,11 @@ export default class UpdateCustomer extends Component {
                             <h3 className="text-center">Update Customer</h3>
                             <div className="card-body">
                                 <form>
+                                {/* <div className="form-group">
+                                        <label> Customer Id: </label>
+                                        <input name="Id" className="form-control"
+                                            value={this.state.customerId} onChange={this.changeCustomerIdHandler} />
+                                    </div> */}
                                     <div className="form-group">
                                         <label> Customer Name: </label>
                                         <input name="title" className="form-control"
