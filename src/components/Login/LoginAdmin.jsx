@@ -1,12 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./login.css";
+import "./LoginAdmin.css";
 import axios from "axios";
 import { useState } from "react";
 import logIcon from "../Assets/user128.png";
 import logo from "../images/logo.png"
 
-function Login() {
+function LoginAdmin() {
   const[email , setEmail] = useState('')
   const[password , setPassword] = useState('')
 
@@ -29,8 +30,8 @@ function Login() {
       data: { email: values.email , password: values.password }
     })
     .then(res =>{
-      
-      window.location.href = 'http://localhost:3000/customerDash/' + res.data.customerId
+      console.log(res.data.customerId)
+      window.location.href = 'http://localhost:3000/viewCustomer'
       alert('Login Success');
     })
     .catch(err => {
@@ -40,11 +41,11 @@ function Login() {
 
   };
   return (
-    <section className="vh-100">
+    <section className="vh-100" id="bg" >
   <div className="container-fluid h-custom">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+        <img src="https://www.zubapay.com/assets/images/auth-img-7.png"
           className="img-fluid" alt="Sample image"/>
       </div>
       <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
@@ -65,7 +66,7 @@ function Login() {
           </div>
 
           <div className="divider d-flex align-items-center my-4">
-            <p className="text-center fw-bold mx-3 mb-0">With</p>
+            <p className="text-center fw-bold mx-3 mb-0">AS ADMIN</p>
           </div>
 
           
@@ -94,11 +95,9 @@ function Login() {
           </div>
 
           <div className="text-center text-lg-start mt-4 pt-2">
-            <button type="submit" className="btn btn-primary btn-lg">Login</button>
-            <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href='/register'
-                className="link-warn">Register</a></p>
-                <p className="small fw-bold mt-2 pt-1 mb-0">Are you an Admin? <a href='/adminlogin'
-                className="link-danger">Admin Login</a></p>
+            <button type="submit" className="btn btn-danger btn-lg">Admin Login</button>
+            <p className="small fw-bold mt-2 pt-1 mb-0">Are you an Customer? <a href='/login'
+                className="link-danger">Login as Customer</a></p>
           </div>
 
         </Form>
@@ -113,4 +112,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginAdmin;

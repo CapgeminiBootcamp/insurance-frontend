@@ -60,6 +60,7 @@ function Register() {
       customerGender: values.customerGender,
     }).then((res) => {
       alert("Registration Success");
+      window.location.href = 'http://localhost:3000/'
     });
   }
   // const history = useHistory();

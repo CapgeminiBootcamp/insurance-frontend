@@ -1,6 +1,8 @@
 import React from "react";
 import customerService from "../services/customerService";
+import Header from "./Header";
 import './viewCustomers.css';
+
 class ViewCustomer extends React.Component {
 
     constructor(props) {
@@ -20,7 +22,11 @@ class ViewCustomer extends React.Component {
     }
     render() {
         return (
+            
+            <div>
+                 <Header/>
             <div className="maincontainer">
+               
                 <h1 className="text-center"> Customer List</h1>
 
                 <table className="table table-striped">
@@ -31,7 +37,7 @@ class ViewCustomer extends React.Component {
                             <td> Age</td>
                             <td> Contact</td>
                             <td> Gender</td>
-                            <td> Action</td>
+                            <td> Actions</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +59,7 @@ class ViewCustomer extends React.Component {
                         }
                     </tbody>
                 </table>
+            </div>
             </div>
         );
     }

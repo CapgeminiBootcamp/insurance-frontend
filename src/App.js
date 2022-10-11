@@ -15,12 +15,13 @@ import CustomerDash from './components/customerDash';
 import UpdateCustomer from './components/updateCustomer';
 import UpdateInsurance from './components/insurance/updateInsurance';
 import Calculator from './components/Insurance Calculator/calculator';
+import LoginAdmin from './components/Login/LoginAdmin';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        
         <div className='box'>
           <Switch>
             <Route exact path='/' component={Login}></Route>
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/Register" component={Register}></Route>
             <Route exact path="/viewInsurance" component={ViewInsurance}></Route>
             <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/adminlogin" component={LoginAdmin}></Route>
             <Route exact path="/viewcustomerdetails/:id" component={ViewCustomerDetails}></Route>
             <Route exact path="/buyInsurance/:id" component={BuyInsurance}></Route>
             <Route exact path="/adminLogin" component={AdminLogin}></Route>
