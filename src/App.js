@@ -33,7 +33,7 @@ function App() {
             <Route exact path="/viewcustomerdetails/:id" component={ViewCustomerDetails}></Route>
             <Route exact path="/buyInsurance/:id" component={BuyInsurance}></Route>
             <Route exact path="/adminLogin" component={AdminLogin}></Route>
-            <Route exact path="/editInsurance/:id" component={EditInsurance}></Route>
+            {/* <Route exact path="/editInsurance/:id" component={EditInsurance}></Route> */}
             <Route exact path="/addInsurance" component={AddInsurance}></Route>
             <Route exact path="/payment/:id" component={PaymentPage}></Route>
             <Route exact path="/customerDash/:id" component={CustomerDash}></Route>

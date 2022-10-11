@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Dashboard/dashboard.css";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import "../Login/login.css"
 
 function Calculator(values) {
   var EstimateValue = 0;
@@ -16,7 +17,7 @@ function Calculator(values) {
 
     else if (values.annualIncome > 500000 && values.annualIncome <= 1000000)
       EstimateValue = values.annualIncome * 18;
-      
+
     else if (values.annualIncome > 1000000) EstimateValue = values.annualIncome * 20;
     if (EstimateValue == 1) alert("You are not eligible");
 
@@ -43,7 +44,7 @@ function Calculator(values) {
     <div className="main">
       <div className="container">
         <center>
-          <div className="title">Term Calculator</div>
+          <h1 className="title ">Term Calculator</h1>
         </center>
         <Formik
           initialValues={{
@@ -67,7 +68,9 @@ function Calculator(values) {
                       name="age"
                       id="age"
                     />
+                    <div className="error">
                     <ErrorMessage name="age" />
+                    </div>
                     {/* <div className="invalid-feedback" id='ageInvalid'></div> */}
                     {/* <div className="invalid-feedback"  id='ageInvalid'>Please fill out this field.</div> */}
                   </div>
@@ -81,7 +84,9 @@ function Calculator(values) {
                     />
 
                     {/* <div className="invalid-feedback" id='incomeInvalid' >Please fill out this field.</div> */}
+                    <div className="error">
                     <ErrorMessage name="annualIncome" />
+                    </div>
                   </div>
                 </div>
                 <div className="input-box">
@@ -96,7 +101,9 @@ function Calculator(values) {
                   />
 
                   {/* <div className="invalid-feedback">Please fill out this field.</div> */}
+                  <div className="error">
                   <ErrorMessage name="familyMembers" />
+                </div>
                 </div>
 
                 {/* ---------------------------------these are radio buttons------------------------------ */}
@@ -114,8 +121,10 @@ function Calculator(values) {
                   <label className="m-2 btn" style ={{borderColor:"#9b59b6"}}>
                     <Field type="radio" name="gender" value="Male" />
                     Others
-                  </label>                  
+                  </label>       
+                  <div className="error">           
                   <ErrorMessage name="gender" />
+                </div>
                 </div>
 
                 <div className="button">

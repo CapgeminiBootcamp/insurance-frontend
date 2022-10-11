@@ -109,7 +109,9 @@ function Register() {
                       id="cutomerName"
                       placeholder="Name"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerName" />
+                    </div>
                   </div>
                   <div className="input-box">
                     <span className="details">Address</span>
@@ -119,7 +121,9 @@ function Register() {
                       id="customeraddress"
                       placeholder="Address"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerAddress" />
+                            </div>
                   </div>
                   <div className="input-box">
                     <span className="details">Age</span>
@@ -129,7 +133,9 @@ function Register() {
                       id="customerAge"
                       placeholder="Age"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerAge" />
+                    </div>
                   </div>
                   <div className="input-box">
                     <span className="details">Salary</span>
@@ -139,7 +145,9 @@ function Register() {
                       id="customerSalary"
                       placeholder="Salary"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerSalary" />
+                    </div>
                   </div>
                   <div className="input-box">
                     <span className="details">Phone Number</span>
@@ -149,7 +157,9 @@ function Register() {
                       id="customerContact"
                       placeholder="Contact"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerContact" />
+                    </div>
                   </div>
                 </div>
                 <div className="input-box">
@@ -161,7 +171,9 @@ function Register() {
                     id="customerFamilyMembers"
                     placeholder="Members"
                   />
+                  <div className="error">
                   <ErrorMessage name="customerFamilyMembers" />
+                  </div>
                 </div>
                 <div className="input-box">
                   <span className="details">Email</span>
@@ -172,7 +184,9 @@ function Register() {
                     id="email"
                     placeholder="Email"
                   />
+                  <div className="error">
                   <ErrorMessage name="email" />
+                  </div>
                 </div>
                 <div className="input-box">
                   <span className="details">Password</span>
@@ -183,7 +197,9 @@ function Register() {
                     id="password"
                     placeholder="Password"
                   />
+                  <div className="error">
                   <ErrorMessage name="password" />
+                  </div>
                 </div>
 
 
@@ -217,7 +233,9 @@ function Register() {
                     <Field type="radio" name="customerGender" value="Others" />
                     Others
                   </label>
+                  <div className="error">
                   <ErrorMessage name="customerGender" />
+                  </div>
                   {/* <div className="form-check"></div>
                   <Field
                     name="customerGender"
