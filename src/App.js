@@ -14,6 +14,7 @@ import PaymentPage from './components/insurance/paymentPage';
 import CustomerDash from './components/customerDash';
 import UpdateCustomer from './components/updateCustomer';
 import UpdateInsurance from './components/insurance/updateInsurance';
+import Calculator from './components/Insurance Calculator/calculator';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route exact path="/customerDash/:id" component={CustomerDash}></Route>
             <Route exact path="/updateCustomer/:id" component={UpdateCustomer}></Route>
             <Route exact path="/updateInsurance/:id" component={UpdateInsurance}></Route>
+            <Route exact path="/calculateterminsurance" component={Calculator}></Route>
           </Switch>
         </div>
         <br /><br />
