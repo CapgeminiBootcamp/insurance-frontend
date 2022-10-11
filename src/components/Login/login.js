@@ -30,7 +30,7 @@ function Login() {
     })
     .then(res =>{
       console.log(res.data.customerId)
-      window.location.href = 'http://localhost:3000/buyinsurance/' + res.data.customerId
+      window.location.href = 'http://localhost:3000/customerDash/' + res.data.customerId
       alert('Login Success');
     })
     .catch(err => {
