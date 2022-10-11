@@ -1,3 +1,6 @@
+.vh-100{
+    background: url(https://www.xmple.com/wallpaper/white-gradient-blue-linear-1920x1080-c2-87cefa-ffffff-a-90-f-14.svg);
+}
 .divider:after,
 .divider:before {
 content: "";

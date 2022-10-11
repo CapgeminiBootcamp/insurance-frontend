@@ -2,6 +2,7 @@ import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import "./addInsurance.css"
 import axios from "axios";
+import Header from "../../Header";
 
 function AddInsurance() {
 
@@ -42,6 +43,7 @@ function AddInsurance() {
 
   return (
     <div>
+      <Header/>
       <br></br>
       <h1 className="text-center">Add Insurance</h1>
       <br></br>
@@ -99,7 +101,7 @@ function AddInsurance() {
                       <ErrorMessage name="tenure" />
                     </div>
 
-                    <button className="btn-btn primary" type="submit">
+                    <button className="btn btn-outline-info" type="submit">
                       Add Insurance
                     </button>
                   </Form>

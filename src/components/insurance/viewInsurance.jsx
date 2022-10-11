@@ -1,5 +1,6 @@
 import React from "react";
 import insuranceService from "../../services/insuranceService";
+import Header from "../Header";
 import './viewInsurance.css';
 class ViewInsurance extends React.Component {
 
@@ -30,7 +31,10 @@ class ViewInsurance extends React.Component {
     }
     render() {
         return (
+            <div>
+                <Header/>
             <div className="maincontainer">
+                
                 <h1 className="text-center"> Insurance List</h1>
 
                 <table className="table table-striped">
@@ -69,6 +73,7 @@ class ViewInsurance extends React.Component {
                         }
                     </tbody>
                 </table>
+            </div>
             </div>
         );
     }

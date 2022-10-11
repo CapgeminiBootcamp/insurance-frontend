@@ -1,5 +1,6 @@
 import React from 'react'
 import customerService from '../services/customerService'
+import Header from './Header';
 class ViewCustomerDetails extends React.Component{
     constructor(props) {
         super(props)
@@ -17,6 +18,7 @@ class ViewCustomerDetails extends React.Component{
     render() {
         return (
             <div>
+                <Header></Header>
                 <br></br>
                 <div className="card col-md-6 offset-md-3">
                     <h1 className="text-center"> Customer Details</h1>

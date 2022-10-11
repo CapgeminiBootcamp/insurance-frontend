@@ -3,10 +3,12 @@ import customerService from '../services/customerService';
 import insuranceService from '../services/insuranceService';
 import './Assets/pinko.css';
 import './customerDash.css'
+import logo from './images/logo1.png'
 import leftImg from './images/left-image.png';
 import rightImg from './images/right-image.png';
 import testimonial from './images/testimonial-icon.png';
 import img1 from './images/featured-item-01.png';
+import Calculator from './Insurance Calculator/calculator';
 // import img2 from './images/featured-item-01.png';
 // import img3 from './images/featured-item-01.png';
 class CustomerDash extends React.Component {
@@ -41,13 +43,40 @@ class CustomerDash extends React.Component {
         this.props.history.push(`/`);
         // window.location.reload();
     }
-    profile(id){
+    profile(id) {
         this.props.history.push(`/viewCustomerDetails/${id}`);
     }
 
     render() {
         return (
             <div>
+                {/* Header */}
+                <header className="header-area header-sticky">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <nav className="main-nav">
+
+                                    <a href="#" className="logo">
+                                        <img id='logo' src={logo} alt="Softy Pinko" />
+                                    </a>
+
+                                    <ul className="nav">
+                                        <li><a href="#welcome" className="active">Home</a></li>
+                                        <li><a href="#features">About</a></li>
+                                        <li><a href="#term">Term Calculator</a></li>
+                                        
+                                        <li><a href="/">Log Out</a></li>
+                                    </ul>
+                                    <a className='menu-trigger'>
+                                        <span>Menu</span>
+                                    </a>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
 
                 <div className="welcome-area" id="welcome">
 
@@ -77,7 +106,7 @@ class CustomerDash extends React.Component {
                                         <button onClick={() => this.edit(this.state.customer.customerId)}>
                                             <div className="features-small-item">
                                                 <div className="icon">
-                                                    <i><img src={img1} alt="" /></i>
+                                                    <i ><img src={img1} alt="" /></i>
                                                 </div>
                                                 <h5 className="features-title">Edit Profile</h5>
                                                 <p>Customize anything your profile so you can get the best</p>
@@ -99,7 +128,7 @@ class CustomerDash extends React.Component {
                                     </div>
 
                                     <div className="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
-                                        <button onClick={() => this.calculate(this.state.customer.customerId)}>
+                                        <a href='#term'>
                                             <div className="features-small-item">
                                                 <div className="icon">
                                                     <i><img src={img1} alt="" /></i>
@@ -107,9 +136,9 @@ class CustomerDash extends React.Component {
                                                 <h5 className="features-title">Term  Calculator</h5>
                                                 <p>Use our state of the class term insurance calculator to find your ideal insurance</p>
                                             </div>
-                                        </button>
+                                        </a>
                                     </div>
-                                    
+
 
                                 </div>
                             </div>
@@ -159,6 +188,8 @@ class CustomerDash extends React.Component {
                         </div>
                     </div>
                 </section>
+                <div id="term" className='container'><Calculator></Calculator></div>
+                
                 {/* reviews */}
                 <section className="section" id="testimonials">
                     <div className="container">
@@ -260,7 +291,7 @@ class CustomerDash extends React.Component {
                         </div>
                     </div>
                 </section>
-
+                
             </div>
 
         )
