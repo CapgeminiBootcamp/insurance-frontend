@@ -76,7 +76,7 @@ export default class UpdateInsurance extends Component {
     render() {
         return (
 
-            <div>
+            <div className='maincontainer'>
                 <br></br>
                 <div className="container">
                     <div className="row">

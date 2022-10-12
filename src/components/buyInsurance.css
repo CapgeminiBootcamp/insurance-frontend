@@ -1,6 +1,16 @@
-#table{
+.maincontainer {
+    background: url(https://wallpaperaccess.com/full/260161.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+#table {
     border-radius: 100px;
 }
-.btn-lg{
+
+.btn-lg {
     margin: 10px;
 }

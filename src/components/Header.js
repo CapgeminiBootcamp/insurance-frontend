@@ -6,6 +6,7 @@ import logo1 from './images/logo1.png'
 
 function Header() {
     return (
+
         <nav className="navbar navbar-expand-lg navbar-dark " style={{ backgroundColor: "#2D2D2D" }}>
 
             <a className="navbar-brand" href="#">
@@ -46,30 +47,3 @@ function Header() {
 export default Header;
 
 
-
-{/* <header className="header-area header-sticky" id='nav'>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <nav className="main-nav">
-
-                            <a href="#" className="logo">
-                                <img id='logo' src={logo1} alt="Softy Pinko" />
-                            </a>
-
-                            <ul className="nav">
-                                <li><a href="#welcome" className="active">Home</a></li>
-                                <li><a href="#features">About</a></li>
-                                <li><a href="#work-process">Term Calculator</a></li>
-
-                                <li><a href="/">Log Out</a></li>
-                            </ul>
-                            <a className='menu-trigger'>
-                                <span>Menu</span>
-                            </a>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header> */}

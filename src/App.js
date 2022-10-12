@@ -40,7 +40,7 @@ function App() {
             <Route exact path="/updateInsurance/:id" component={UpdateInsurance}></Route>
           </Switch>
         </div>
-        <br /><br />
+       
       </Router>
     </div>
   );

@@ -1,12 +1,14 @@
 import React from 'react'
 import customerService from '../services/customerService'
 import Header from './Header';
+
 class ViewCustomerDetails extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
             id: this.props.match.params.id,
-            customer : {}
+            customer : {},
+            
         };
     }
     componentDidMount() {
@@ -14,11 +16,16 @@ class ViewCustomerDetails extends React.Component{
             this.setState({ customer: res.data });
         })
     }
+    back() {
+        this.props.history.goBack();
+        // window.location.reload();
+    }
+   
 
     render() {
         return (
-            <div>
-                <Header></Header>
+            <div className='maincontainer'>
+                {/* <Header></Header> */}
                 <br></br>
                 <div className="card col-md-6 offset-md-3">
                     <h1 className="text-center"> Customer Details</h1>
@@ -62,6 +69,7 @@ class ViewCustomerDetails extends React.Component{
                         
                     </div>
 
+                    <button onClick={() => this.back()} className="btn btn-outline-primary" >Go back</button>
                 </div>
             </div>
         )

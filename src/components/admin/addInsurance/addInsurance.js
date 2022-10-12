@@ -42,7 +42,7 @@ function AddInsurance() {
   };
 
   return (
-    <div>
+    <div className="maincontainer">
       <Header/>
       <br></br>
       <h1 className="text-center">Add Insurance</h1>

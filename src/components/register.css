@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
+  
+  
 }
 main{
    
@@ -13,6 +15,7 @@ main{
   align-items: center;
   padding: 10px;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  
 }
 .mainBox{
   margin: auto;
