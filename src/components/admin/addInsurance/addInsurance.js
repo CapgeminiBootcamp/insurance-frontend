@@ -69,39 +69,47 @@ function AddInsurance() {
                       <Field
                         type="text"
                         name="name"
-                        className="form-control mb-4"
+                        className="form-control mb-2"
                       />
+                      <div className="error">
                       <ErrorMessage name="name" />
+                      </div>
                     </div>
                     <div>
                       <label>Sum Assured</label>
                       <Field
                         type="number"
                         name="sum"
-                        className="form-control mb-4"
+                        className="form-control mb-2"
                       />
+                      <div className="error">
                       <ErrorMessage name="sum" />
+                      </div>
                     </div>
                     <div>
                       <label>Premium Amount</label>
                       <Field
                         type="text"
                         name="premium_amount"
-                        className="form-control mb-4"
+                        className="form-control mb-2"
                       />
+                      <div className="error">
                       <ErrorMessage name="premium_amount" />
+                      </div>
                     </div>
                     <div>
                       <label>Tenure</label>
                       <Field
                         type="number1"
                         name="tenure"
-                        className="form-control mb-4"
+                        className="form-control mb-2"
                       />
+                      <div className="error">
                       <ErrorMessage name="tenure" />
                     </div>
+                    </div>
 
-                    <button className="btn btn-outline-info" type="submit">
+                    <button className="btn btn-outline-info mt-4" type="submit">
                       Add Insurance
                     </button>
                   </Form>

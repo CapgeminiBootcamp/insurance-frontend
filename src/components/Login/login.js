@@ -4,7 +4,8 @@ import "./login.css";
 import axios from "axios";
 import { useState } from "react";
 import logIcon from "../Assets/user128.png";
-import logo from "../images/logo.png"
+import logo from "../images/logo.png";
+import "../Login/login.css"
 
 function Login() {
   const[email , setEmail] = useState('')
@@ -71,15 +72,17 @@ function Login() {
           
           <div className="form-outline mb-4">
               <Field className="form-control form-control-lg" type="email" name="email" placeholder="Enter your Email..." id='email'/>
+              <div className="error">
               <ErrorMessage name="email" />
-            
+            </div>
           </div>
 
           
           <div className="form-outline mb-3">
               <Field className="form-control form-control-lg" type="password" name="password" placeholder="Enter your Password..." id='password'/>
+              <div className="error">
               <ErrorMessage name="password"/>
-            
+            </div>
           </div>
 
           <div className="d-flex justify-content-between align-items-center">

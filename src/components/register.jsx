@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import "./register.css";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+
 function Register() {
   const url = "http://localhost:2024/api/v1/add-Customer";
 
@@ -11,7 +12,7 @@ function Register() {
     customerName: Yup.string().required("This Field cannot be empty"),
     customeraddress: Yup.string().required("This Field cannot be empty"),
     customerAge: Yup.number()
-      .positive("Age cannot be zero")
+      .min(18,"Age has to be greater than 18")
       .required("This Field cannot be empty")
       .integer("Age cannot be a floating number"),
     customerSalary: Yup.number()
@@ -35,7 +36,7 @@ function Register() {
   function submit(values) {
     // e.preventDefault();
     Axios.post(url, {
-      //   customerId: values.customerId,
+        // customerId: values.customerId,
       cutomerName: values.customerName,
       customeraddress: values.customeraddress,
       customerAge: values.customerAge,
@@ -58,7 +59,7 @@ function Register() {
         <div className="title">Registration</div>
         <Formik
           initialValues={{
-            customerId: "",
+            // customerId: "",
             cutomerName: "",
             customeraddress: "",
             customerAge: "",
@@ -84,12 +85,14 @@ function Register() {
                   <div className="input-box">
                     <span className="details">Full Name</span>
                     <Field
-                      name="customerName"
+                      name="customerName "
                       type="text"
                       id="cutomerName"
                       placeholder="Name"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerName" />
+                    </div>
                   </div>
                   <div className="input-box">
                     <span className="details">Address</span>
@@ -99,7 +102,9 @@ function Register() {
                       id="customeraddress"
                       placeholder="Address"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerAddress" />
+                            </div>
                   </div>
                   <div className="input-box">
                     <span className="details">Age</span>
@@ -109,7 +114,9 @@ function Register() {
                       id="customerAge"
                       placeholder="Age"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerAge" />
+                    </div>
                   </div>
                   <div className="input-box">
                     <span className="details">Salary</span>
@@ -119,7 +126,9 @@ function Register() {
                       id="customerSalary"
                       placeholder="Salary"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerSalary" />
+                    </div>
                   </div>
                   <div className="input-box">
                     <span className="details">Phone Number</span>
@@ -129,7 +138,9 @@ function Register() {
                       id="customerContact"
                       placeholder="Contact"
                     />
+                    <div className="error">
                     <ErrorMessage name="customerContact" />
+                    </div>
                   </div>
                 </div>
                 <div className="input-box">
@@ -141,7 +152,9 @@ function Register() {
                     id="customerFamilyMembers"
                     placeholder="Members"
                   />
+                  <div className="error">
                   <ErrorMessage name="customerFamilyMembers" />
+                  </div>
                 </div>
                 <div className="input-box">
                   <span className="details">Email</span>
@@ -152,7 +165,9 @@ function Register() {
                     id="email"
                     placeholder="Email"
                   />
+                  <div className="error">
                   <ErrorMessage name="email" />
+                  </div>
                 </div>
                 <div className="input-box">
                   <span className="details">Password</span>
@@ -163,18 +178,55 @@ function Register() {
                     id="password"
                     placeholder="Password"
                   />
+                  <div className="error">
                   <ErrorMessage name="password" />
+                  </div>
                 </div>
+
+
+                {/* ............. */}
                 <div className="input-box">
                   <span className="details">Gender</span>
+                  {/* <div className="form-check"></div>
                   <Field
                     name="customerGender"
-                    type="text"
+                    type="radio"
+                    className="form-check-input btn btn-outline-success"
+                    id="customerGender"
+                    placeholder="gender"
+                    value = "Male"
+                  />
+                  <label className="form-check-label btn-btn outline success">Male</label>
+                  <ErrorMessage name="customerGender" /> */}
+
+                  <label className="m-2 btn" style ={{borderColor:"#9b59b6"}}>
+                    <Field type="radio" name="customerGender" value="Male" />
+                    Male
+                  </label>
+
+                  {/* <br></br> */}
+                  <label className="m-2 btn" style ={{ borderColor:"#9b59b6" }}>
+                    <Field type="radio" name="customerGender" value="Female" className="" />
+                    Female
+                  </label>
+
+                  <label className="m-2 btn" style ={{borderColor:"#9b59b6"}}>
+                    <Field type="radio" name="customerGender" value="Others" />
+                    Others
+                  </label>
+                  <div className="error">
+                  <ErrorMessage name="customerGender" />
+                  </div>
+                  {/* <div className="form-check"></div>
+                  <Field
+                    name="customerGender"
+                    type="radio"
                     className="form-2"
                     id="customerGender"
                     placeholder="gender"
                   />
-                  <ErrorMessage name="customerGender" />
+                  <label className="form-check-label btn-btn outline success">Female</label>
+                <ErrorMessage name="customerGender" /> */}
                 </div>
 
                 <div className="button">

@@ -1,77 +1,150 @@
-import React, { useState } from 'react'
-import '../Dashboard/dashboard.css'
+import React, { useState } from "react";
+import "../Dashboard/dashboard.css";
+import { ErrorMessage, Formik, Form, Field } from "formik";
+import * as Yup from "yup";
+import "../Login/login.css"
 
-function Calculator() {
-    var EstimateValue = 0;
-    const [annualIncome, setAnnualIncome] = useState("");
-    const [age, setAge] = useState("");
-    const [familyMembers, setFamilyMembers] = useState("");
-    function calculate() {
-             
+function Calculator(values) {
+  var EstimateValue = 0;
+  const [annualIncome, setAnnualIncome] = useState("");
+  const [age, setAge] = useState("");
+  const [familyMembers, setFamilyMembers] = useState("");
+  
+  
+  function calculate(values) {
+    if (values.annualIncome >= 100000 && values.annualIncome <= 500000)
+      EstimateValue = values.annualIncome * 15;
 
-        if(annualIncome > 100000 && annualIncome <= 500000)		
-			EstimateValue = (annualIncome * 15);			
-		else if(annualIncome > 500000 && annualIncome <= 1000000) 			
-			EstimateValue = (annualIncome * 18);						
-		else if(annualIncome> 1000000) 			
-			EstimateValue = annualIncome * 20;				
-		if(EstimateValue==1)
-			alert("You can't ");
+    else if (values.annualIncome > 500000 && values.annualIncome <= 1000000)
+      EstimateValue = values.annualIncome * 18;
 
+    else if (values.annualIncome > 1000000) EstimateValue = values.annualIncome * 20;
+    if (EstimateValue == 1) alert("You are not eligible");
 
-		document.getElementById('newId').innerHTML = "Your final Estimated Value is" +" " + EstimateValue;
-        }
-    
+    document.getElementById("newId").innerHTML =
+      "Your final Estimated Value is" + " " + EstimateValue;
 
+      console.log("button clicked")
+  }
+
+  const calculatorSchema = Yup.object().shape({
+    age: Yup.number()
+      .required("Age is required")
+      .min(18, "Age should be 18 years "),
+    annualIncome: Yup.number()
+      .required("Salary is required")
+      .min(100000, "Salary should be atleast 100000"),
+    familyMembers: Yup.number()
+      .required("Family Members is a requied filed")
+      .min(0, "Family Members has to be atleast 0"),
+    gender: Yup.string().required("This is a required Field"),
+  });
 
   return (
-    <div className='main'>
-            <div className="container">
-                <center><div className="title">Term Calculator</div></center>
-                <div className="content">
-                    <form className="was-validated">
-                        <div className="user-details">
-                            <div className="input-box">
-                            <label className="form-label">Age</label>
-                                <input  type="number" placeholder="Age" value={age} id='age' onChange={e=>setAge(e.target.value)} required />
-                                {/* <div className="invalid-feedback" id='ageInvalid'></div> */}
-                                <div className="invalid-feedback"  id='ageInvalid'>Please fill out this field.</div>
-                            </div>
-                            <div className="input-box">
-                            <label  className="form-label">Annual Income</label>
-                                <input  type="number" placeholder="Annual Income" value={annualIncome} id='annualIncome' onChange={e=>setAnnualIncome(e.target.value)} required/>
-                                
-                                <div className="invalid-feedback" id='incomeInvalid' >Please fill out this field.</div>
-                            </div>
-                        </div>
-                        <div className="input-box">
-                        <label className="form-label">Family Members</label>
-                            <input  type="text" className='form-2' placeholder="Members" value={familyMembers} id='familyMembers' onChange={e=>setFamilyMembers(e.target.value)} required/>
-                            
-                            <div className="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        </form>
-
-                        {/* ---------------------------------these are radio buttons------------------------------ */}
-                        
-                        <div>
-                            <input type="radio" value="Male" name="gender" /> Male
-                            <input type="radio" value="Female" name="gender" /> Female
-                            <input type="radio" value="Other" name="gender" /> Other
-                        </div>
-
-                        <div className="button">
-                            <input className='calculate-btn' type="button" value="Calculate" onClick={calculate} />
-                        </div>
-                        
-                    <div className='new-one'>
-                        <p  id='newId' ></p>
+    <div className="main">
+      <div className="container">
+        <center>
+          <h1 className="title ">Term Calculator</h1>
+        </center>
+        <Formik
+          initialValues={{
+            age: "",
+            annualIncome: "",
+            familyMembers: "",
+            gender: "",
+          }}
+          onSubmit={(e) => calculate(e)}
+          validationSchema={calculatorSchema}
+        >
+          {(props) => (
+            <div className="content">
+              <Form className="was-validated">
+                <div className="user-details">
+                  <div className="input-box">
+                    <label className="form-label">Age</label>
+                    <Field
+                      type="number"
+                      placeholder="Age"
+                      name="age"
+                      id="age"
+                    />
+                    <div className="error">
+                    <ErrorMessage name="age" />
                     </div>
+                    {/* <div className="invalid-feedback" id='ageInvalid'></div> */}
+                    {/* <div className="invalid-feedback"  id='ageInvalid'>Please fill out this field.</div> */}
+                  </div>
+                  <div className="input-box">
+                    <label className="form-label">Annual Income</label>
+                    <Field
+                      type="number"
+                      placeholder="Annual Income"
+                      name="annualIncome"
+                      id="annualIncome"
+                    />
+
+                    {/* <div className="invalid-feedback" id='incomeInvalid' >Please fill out this field.</div> */}
+                    <div className="error">
+                    <ErrorMessage name="annualIncome" />
+                    </div>
+                  </div>
                 </div>
-              
+                <div className="input-box">
+                  <label className="form-label">Family Members</label>
+                  <br></br>
+                  <Field
+                    type="text"
+                    className="form-2"
+                    placeholder="Members"
+                    name="familyMembers"
+                    id="familyMembers"
+                  />
+
+                  {/* <div className="invalid-feedback">Please fill out this field.</div> */}
+                  <div className="error">
+                  <ErrorMessage name="familyMembers" />
+                </div>
+                </div>
+
+                {/* ---------------------------------these are radio buttons------------------------------ */}
+                <label className="form-;abel" style={{marginTop:"10px"}}>Gender</label>
+
+                <div>
+                <label className="m-2 btn" style ={{borderColor:"#9b59b6"}}>
+                    <Field type="radio" name="gender" value="Male" />
+                    Male
+                  </label>
+                  <label className="m-2 btn" style ={{borderColor:"#9b59b6"}}>
+                    <Field type="radio" name="gender" value="Male" />
+                    Female
+                  </label>                  
+                  <label className="m-2 btn" style ={{borderColor:"#9b59b6"}}>
+                    <Field type="radio" name="gender" value="Male" />
+                    Others
+                  </label>       
+                  <div className="error">           
+                  <ErrorMessage name="gender" />
+                </div>
+                </div>
+
+                <div className="button">
+                  <input
+                    className="calculate-btn"
+                    type="submit"
+                    value="Calculate"
+                    // onClick={calculate}
+                  />
+                </div>
+              </Form>
+              <div className="new-one">
+                <p id="newId"></p>
+              </div>
             </div>
-        </div>
-  )
+          )}
+        </Formik>
+      </div>
+    </div>
+  );
 }
 
-export default Calculator
+export default Calculator;
